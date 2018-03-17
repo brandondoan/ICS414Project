@@ -13,6 +13,13 @@ FlowRouter.route('/', {
   },
 });
 
+export const landingPageRouteName2 = 'Landing_Page2';
+FlowRouter.route('/landing2', {
+  name: landingPageRouteName2, action() {
+    BlazeLayout.render('Landing_Layout2', { main: landingPageRouteName });
+  },
+});
+
 /*                        DIRECTORY ROUTE                       */
 
 function addDirectoryBodyClass() {
