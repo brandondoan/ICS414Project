@@ -1,1 +1,1 @@
-import './landing-page.html';
+import './landing-page2.html';
