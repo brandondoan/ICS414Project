@@ -6,7 +6,8 @@ Meteor.methods({
   CellAlert(area, message) {
     check(area, String);
     check(message, String);
-    console.log(`Alert ${message} in ${area}`);
+    const { Alerts } = require('/imports/api/server/secretAlertCode.js');
+    Alerts.sendPhone('help', [0, 2]);
     return 'ok';
   },
 
