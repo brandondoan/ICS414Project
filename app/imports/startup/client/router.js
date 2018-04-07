@@ -20,6 +20,13 @@ FlowRouter.route('/landing2', {
   },
 });
 
+export const landingPageRouteName3 = 'Alert_Page';
+FlowRouter.route('/alert', {
+  name: landingPageRouteName3, action() {
+    BlazeLayout.render('Alert_Page', { main: landingPageRouteName3 });
+  },
+});
+
 /*                        DIRECTORY ROUTE                       */
 
 function addDirectoryBodyClass() {
