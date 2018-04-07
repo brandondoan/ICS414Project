@@ -14,7 +14,8 @@ Meteor.methods({
   SirenAlert(area, message) {
     check(area, String);
     check(message, String);
-    console.log(`Alert ${message} in ${area}`);
+    const { Alerts } = require('/imports/api/server/secretAlertCode.js');
+    Alerts.sendRadio('Flash Flood plz no drown turn around');
     return 'ok';
   },
 });
