@@ -17,10 +17,10 @@ class AlertCollection extends BaseCollection {
    */
   constructor() {
     super('Alert', new SimpleSchema({
-      alertType: { type: String, label: 'Type of Alert' },
-      area: { type: Array, label: 'Areas to be effected by Alert' },
-      sendMethod: { type: Array, label: 'Methods to send the Alert' },
-      test: { type: Boolean, label: 'Whether the alert is a test or not' },
+      alertType: { type: String, label: 'Type of Alert', optional: false },
+      area: { type: Array, label: 'Areas to be effected by Alert', optional: true },
+      sendMethod: { type: Array, label: 'Methods to send the Alert', optional: true },
+      test: { type: Boolean, label: 'Whether the alert is a test or not', optional: true },
     }, { tracker: Tracker }));
   }
   define({ alertType = '', sendMethod = [], test = '', area = [] }) {

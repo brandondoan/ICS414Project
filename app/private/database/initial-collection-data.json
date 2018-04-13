@@ -1,12 +1,12 @@
 {
-  "alerts": [
+  "collections": [
     {
       "name": "AlertCollection",
       "contents": [
         {
           "alertType": "Tsunami",
-          "area": "puna lmao",
-          "sendMethod": "none lol",
+          "area": ["puna", "why"],
+          "sendMethod": ["none", "why"],
           "test": false
         }
       ]

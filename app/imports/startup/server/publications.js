@@ -1,3 +1,3 @@
-import { Alerts } from '/imports/api/Alert/AlertCollection';
+import { Alerts } from '/imports/api/alert/AlertCollection';
 
 Alerts.publish();
