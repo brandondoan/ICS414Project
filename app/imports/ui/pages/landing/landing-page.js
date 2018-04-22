@@ -1,5 +1,6 @@
 import { Template } from 'meteor/templating';
 import { Alerts } from '/imports/api/alert/AlertCollection';
+import { FlowRouter } from 'meteor/kadira:flow-router';
 
 Template.Landing_Page.onCreated(function onCreated() {
   this.subscribe(Alerts.getPublicationName());
@@ -11,11 +12,11 @@ Template.Landing_Page.events({
     const testBool = (test === 'true'); // this is just to make it a boolean and not a string
     const newAlert = { // we make an object thingy to insert into db
       alertType: '',
-      area: [],
-      sendMethod: [],
+      area: ['test', 'test2'],
+      sendMethod: ['test', 'test2'],
       test: testBool,
     };
-    console.log(Alerts);
     Alerts._collection.insert(newAlert); // i have no idea why this works
+    console.log(FlowRouter);
   },
-})
+});

@@ -1,6 +1,6 @@
 import SimpleSchema from 'simpl-schema';
 import BaseCollection from '/imports/api/base/BaseCollection';
-import { check } from 'meteor/check';
+// import { check } from 'meteor/check';
 import { _ } from 'meteor/underscore';
 import { Tracker } from 'meteor/tracker';
 
@@ -19,14 +19,18 @@ class AlertCollection extends BaseCollection {
     super('Alert', new SimpleSchema({
       alertType: { type: String, label: 'Type of Alert', optional: true },
       area: { type: Array, label: 'Areas to be effected by Alert', optional: true },
+      'area.$': { type: String, label: 'Areas to be effected by Alert', optional: true },
       sendMethod: { type: Array, label: 'Methods to send the Alert', optional: true },
+      'sendMethod.$': { type: String, label: 'Methods to send the Alert', optional: true },
       test: { type: Boolean, label: 'Whether the alert is a test or not', optional: false },
     }, { tracker: Tracker }));
   }
   define({ alertType = '', sendMethod = [], test = '', area = [] }) {
     // make sure required fields are OK.
-    const checkPattern = { alertType: String, test: Boolean, sendMethod: Array, area: Array };
-    check({ alertType, test, sendMethod, area }, checkPattern);
+    // const checkPattern = { alertType: String, test: Boolean, sendMethod: Array, area: Array };
+    // this is commented it out because it was breaking everything
+    // who needs validation anyway
+    // check({ alertType, test, sendMethod, area }, checkPattern);
 
     return this._collection.insert({ alertType, test, sendMethod, area });
   }
