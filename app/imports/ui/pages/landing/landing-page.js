@@ -12,11 +12,12 @@ Template.Landing_Page.events({
     const testBool = (test === 'true'); // this is just to make it a boolean and not a string
     const newAlert = { // we make an object thingy to insert into db
       alertType: '',
-      area: ['test', 'test2'],
-      sendMethod: ['test', 'test2'],
+      area: ['s', 'nek'],
+      sendMethod: ['s', 'nek'],
       test: testBool,
     };
-    Alerts._collection.insert(newAlert); // i have no idea why this works
-    console.log(FlowRouter);
+    const id = Alerts._collection.insert(newAlert); // i have no idea why this works
+    console.log(id);
+    FlowRouter.go(`/${id}/cause`); // route to specific page for db items
   },
 });

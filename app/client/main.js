@@ -10,6 +10,7 @@ import '/imports/ui/layouts/user';
 import '/imports/ui/pages/directory';
 import '/imports/ui/pages/landing';
 import '/imports/ui/pages/landing2';
+import '/imports/ui/pages/alert';
 import '/imports/ui/stylesheets/style.css';
 import '/imports/api/base';
 import '/imports/api/alert';

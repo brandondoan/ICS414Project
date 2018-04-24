@@ -13,17 +13,17 @@ FlowRouter.route('/', {
   },
 });
 
-export const landingPageRouteName2 = 'Landing_Page2';
+export const AlertRoute22 = 'Landing_Page2';
 FlowRouter.route('/landing2', {
-  name: landingPageRouteName2, action() {
-    BlazeLayout.render('Landing_Layout2', { main: landingPageRouteName2 });
+  name: AlertRoute22, action() {
+    BlazeLayout.render('Landing_Layout2', { main: AlertRoute22 });
   },
 });
 
-export const landingPageRouteName3 = 'Alert_Page';
+export const AlertRoute32 = 'Alert_Page';
 FlowRouter.route('/alert', {
-  name: landingPageRouteName3, action() {
-    BlazeLayout.render('Alert_Page', { main: landingPageRouteName3 });
+  name: AlertRoute32, action() {
+    BlazeLayout.render('Alert_Page', { main: AlertRoute32 });
   },
 });
 
@@ -45,6 +45,25 @@ FlowRouter.route('/directory', {
   },
   triggersEnter: [addDirectoryBodyClass],
   triggersExit: [removeDirectoryBodyClass],
+});
+
+const alertRoutes = FlowRouter.group({
+  prefix: '/:alert',
+  name: 'alertRoutes',
+});
+
+export const AlertRoute2 = 'Landing_Page2';
+alertRoutes.route('/cause', {
+  name: AlertRoute2, action() {
+    BlazeLayout.render('Landing_Layout2', { main: AlertRoute2 });
+  },
+});
+
+export const AlertRoute3 = 'Alert_Page';
+alertRoutes.route('/alert', {
+  name: AlertRoute3, action() {
+    BlazeLayout.render('Alert_Page', { main: AlertRoute3 });
+  },
 });
 
 
