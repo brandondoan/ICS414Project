@@ -1,5 +1,3 @@
-import { Interests } from '/imports/api/interest/InterestCollection';
-import { Profiles } from '/imports/api/profile/ProfileCollection';
+import { Alerts } from '/imports/api/alert/AlertCollection';
 
-Interests.publish();
-Profiles.publish();
+Alerts.publish();
