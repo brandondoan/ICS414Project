@@ -66,4 +66,5 @@ Template.Landing_Page2.events({
     },
 });
 
+
 Meteor.call('CellAlert', 'al', 'ert');

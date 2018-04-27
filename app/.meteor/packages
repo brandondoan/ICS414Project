@@ -43,7 +43,7 @@ arillo:flow-router-helpers
 # Semantic UI
 semantic:ui
 juliancwirko:postcss
-less@2.7.9
+less
 
 # For prototyping purposes, enable insecure
 insecure@1.0.7
