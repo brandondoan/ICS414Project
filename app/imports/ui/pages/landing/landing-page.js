@@ -17,7 +17,6 @@ Template.Landing_Page.events({
       test: testBool,
     };
     const id = Alerts._collection.insert(newAlert); // i have no idea why this works
-    console.log(id);
     FlowRouter.go(`/${id}/cause`); // route to specific page for db items
   },
 });

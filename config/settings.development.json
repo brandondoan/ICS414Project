@@ -11,5 +11,6 @@
       "popupHeight": 610
     },
     "initialDatabaseFileName": "database/initial-collection-data.json"
-  }
+  },
+  "MAIL_URL": "smtps://UHMwarning@gmail.com:thebigwarn@smtp.gmail.com:465"
 }

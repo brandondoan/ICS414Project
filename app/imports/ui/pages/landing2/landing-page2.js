@@ -10,6 +10,7 @@ Template.Landing_Page2.onCreated(function onCreated() {
 
 function addAlert(alert) {
   const id = FlowRouter.getParam('alert');
+  Meteor.call('sendEmail', id);
   Alerts.update({ _id: id }, {
     $set: { alertType: alert },
   });
@@ -24,4 +25,6 @@ Template.Landing_Page2.events({
   },
 });
 
-Meteor.call('CellAlert', 'al', 'ert');
+// Meteor.call('CellAlert', 'al', 'ert');
+// Meteor.call('EmailAlert', FlowRouter.getParam('alert'), ['swoop.ty1@gmail.com']);
+
