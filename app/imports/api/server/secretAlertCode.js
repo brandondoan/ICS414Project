@@ -18,7 +18,7 @@ export const Alert = {
   },
 
   sendSiren(message) {
-    console.log(`Starting sirens in ${area}`);
+    console.log(message);
   },
 
   sendEmail(list, subject, message) {
