@@ -15,7 +15,7 @@ function addSendMethod(methods) {
 }
 
 Template.Alert_Page.events({
-  'mousedown button': function (event) {
+  'mousedown div': function (event) {
     addSendMethod('a');
   },
   'mousedown #ui #raised #segment': function (event) {
@@ -23,4 +23,3 @@ Template.Alert_Page.events({
   },
 });
 
-// Meteor.call('CellAlert', 'TQRcNjDxfXmTvTR5o', [8088959608]);

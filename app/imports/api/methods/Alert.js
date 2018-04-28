@@ -2,7 +2,9 @@ import { check } from 'meteor/check';
 import { Meteor } from 'meteor/meteor';
 import { _ } from 'meteor/underscore';
 import { Alerts } from '/imports/api/alert/AlertCollection';
-import { moment } from 'moment/moment';
+// import { moment } from 'moment';
+
+const moment = require('moment');
 
 Meteor.methods({
   CellAlert(id, numbers) {
@@ -16,7 +18,7 @@ Meteor.methods({
     if (sendingAlert.test) {
       not = 'not ';
     }
-    const time = moment(d).format('MMMM Do YYYY, h:mm:ss a');
+    const time = moment().format('MMMM Do YYYY, h:mm:ss a');
     const alertMessage = `${problem} has been reported in the areas of ${sendingAlert.area} 
                           at ${time}. This is ${not}a test.`;
     Alert.sendPhone(alertMessage, numbers);
@@ -33,7 +35,7 @@ Meteor.methods({
     if (sendingAlert.test) {
       not = 'not ';
     }
-    const time = moment(d).format('MMMM Do YYYY, h:mm:ss a');
+    const time = moment().format('MMMM Do YYYY, h:mm:ss a');
     const alertMessage = `${problem} has been reported in the areas of ${sendingAlert.area} 
                           at ${time}. This is ${not}a test.`;
     Alert.sendRadio(alertMessage);
