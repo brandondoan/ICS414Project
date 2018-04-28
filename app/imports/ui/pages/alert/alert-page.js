@@ -7,7 +7,6 @@ import { Alerts } from '/imports/api/alert/AlertCollection';
 Template.Alert_Page.onCreated(function onCreated() {
   this.subscribe(Alerts.getPublicationName());
 });
-git
 function addSendMethod(methods) {
   const id = FlowRouter.getParam('alert');
   Alerts.update({ _id: id }, {
@@ -24,4 +23,4 @@ Template.Alert_Page.events({
   },
 });
 
-Meteor.call('CellAlert', 'al', 'ert');
+// Meteor.call('CellAlert', 'TQRcNjDxfXmTvTR5o', [8088959608]);
