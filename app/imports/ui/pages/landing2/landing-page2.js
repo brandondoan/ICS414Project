@@ -10,61 +10,53 @@ Template.Landing_Page2.onCreated(function onCreated() {
 
 function addAlert(alert) {
   const id = FlowRouter.getParam('alert');
-  Meteor.call('sendEmail', id);
   Alerts.update({ _id: id }, {
     $set: { alertType: alert },
   });
+  FlowRouter.go(`/${id}/alert`);
 }
 
 Template.Landing_Page2.events({
 
   'mousedown #surf': function (event) {
-      addAlert('surf');
-      FlowRouter.go(`/alert`);
+    addAlert('surf');
     console.log(event.target);
   },
 
-    'mousedown #landslide': function (event) {
-        addAlert('landslide');
-        FlowRouter.go(`/alert`);
-        console.log(event.target);
-    },
+  'mousedown #landslide': function (event) {
+    addAlert('landslide');
+    console.log(event.target);
+  },
 
-    'mousedown #flood': function (event) {
-        addAlert('flood');
-        FlowRouter.go(`/alert`);
-        console.log(event.target);
-    },
+  'mousedown #flood': function (event) {
+    addAlert('flood');
+    console.log(event.target);
+  },
 
-    'mousedown #earthquake': function (event) {
-        addAlert('earthquake');
-        FlowRouter.go(`/alert`);
-        console.log(event.target);
-    },
+  'mousedown #earthquake': function (event) {
+    addAlert('earthquake');
+    console.log(event.target);
+  },
 
-    'mousedown #tsunami': function (event) {
-        addAlert('tsunami');
-        FlowRouter.go(`/alert`);
-        console.log(event.target);
-    },
+  'mousedown #tsunami': function (event) {
+    addAlert('tsunami');
+    console.log(event.target);
+  },
 
-    'mousedown #missile': function (event) {
-        addAlert('missile');
-        FlowRouter.go(`/alert`);
-        console.log(event.target);
-    },
+  'mousedown #missile': function (event) {
+    addAlert('missile');
+    console.log(event.target);
+  },
 
-    'mousedown #amber': function (event) {
-        addAlert('amber');
-        FlowRouter.go(`/alert`);
-        console.log(event.target);
-    },
+  'mousedown #amber': function (event) {
+    addAlert('amber');
+    console.log(event.target);
+  },
 
-    'mousedown #hurricane': function (event) {
-        addAlert('hurricane');
-        FlowRouter.go(`/alert`);
-        console.log(event.target);
-    },
+  'mousedown #hurricane': function (event) {
+    addAlert('hurricane');
+    console.log(event.target);
+  },
 });
 
 // Meteor.call('CellAlert', 'al', 'ert');

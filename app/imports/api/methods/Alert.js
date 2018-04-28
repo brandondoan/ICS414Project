@@ -65,7 +65,7 @@ Meteor.methods({
     const alertSubject = `${problem} in your area, this is ${not}a test`;
     const alertMessage = `${problem} has been reported in the areas of ${sendingAlert.area} 
                           at ${time}. This is ${not}a test.`;
-    // Alert.sendEmail(id, list, alertSubject, alertMessage);
+    Alert.sendEmail(id, list, alertSubject, alertMessage);
     console.log(id, list, alertSubject, alertMessage);
   },
 });
