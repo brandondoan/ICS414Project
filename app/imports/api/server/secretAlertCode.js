@@ -16,7 +16,12 @@ export const Alert = {
   sendRadio(message) {
     console.log(message);
   },
-  sendEmail(id, list, subject, message) {
+
+  sendSiren(message) {
+    console.log(`Starting sirens in ${area}`);
+  },
+
+  sendEmail(list, subject, message) {
     _.each(list, function (input) {
       Email.send({ to: input, from: 'uhmwarning@gmail.com', subject: subject, message: message });
     });
