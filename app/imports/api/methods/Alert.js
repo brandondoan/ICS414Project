@@ -53,19 +53,19 @@ Meteor.methods({
   EmailAlert(id, list) {
     // check(id, String);
     check(list, Array);
-    const sendingAlert = Alerts.find({ _id: id }).fetch();
+    const sendingAlert = Alerts.find({ _id: id }).fetch()[0];
+    console.log(sendingAlert);
     const problem = sendingAlert.alertType;
     const d = Date();
     let not = '';
-    if (sendingAlert.test) {
+    if (!sendingAlert.test) {
       not = 'not ';
     }
     const time = moment(d).format('MMMM Do YYYY, h:mm:ss a');
     const { Alert } = require('/imports/api/server/secretAlertCode.js');
     const alertSubject = `${problem} in your area, this is ${not}a test`;
-    const alertMessage = `${problem} has been reported in the areas of ${sendingAlert.area} 
-                          at ${time}. This is ${not}a test.`;
-    Alert.sendEmail(id, list, alertSubject, alertMessage);
-    console.log(id, list, alertSubject, alertMessage);
+    const alertMessage = `${problem} has been reported in the areas of ${sendingAlert.area} at ${time}. This is ${not}a test.`;
+    console.log(list, alertSubject, alertMessage);
+    Alert.sendEmail(list, alertSubject, alertMessage);
   },
 });

@@ -24,7 +24,7 @@ export const Alert = {
   sendEmail(list, subject, message) {
     _.each(list, function (input) {
       console.log(`sending text alert to ${input} with title: ${subject} and body: ${message}`);
-      Email.send({ to: input, from: 'uhmwarning@gmail.com', subject: subject, message: message });
+      Email.send({ to: input, from: 'uhmwarning@gmail.com', subject: subject, text: message });
     });
   },
 };

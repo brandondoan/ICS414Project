@@ -64,7 +64,7 @@ Template.Alert_Page.events({
           break;
       }
     });
-    console.log(sanitizedArray);
-    console.log('sending alerts');
+    const id = FlowRouter.getParam('alert');
+    Alerts.delete({ _id: id });
   },
 });
