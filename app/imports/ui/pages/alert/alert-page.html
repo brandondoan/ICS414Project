@@ -1,16 +1,25 @@
+
+
 <template name="Alert_Page">
     <div class="ui container"><br/></div>
     <div class="ui container segment center">
         <h2 class="ui centered header">Select a Send Option</h2>
         <div class="ui centered grid">
             <div class="eight wide column">
-                <div class="ui raised segment"><div class="ui bottom attached label">Cell Phones</div><i class="huge phone icon"></i></div>
-                <div class="ui raised segment"><div class="ui bottom attached label">Radio</div><i class="huge rss icon"></i></div>
+                <div class="ui segment"><button class="ui fluid icon toggle button" id="cell"><div class="ui bottom attached label">Cell Phones</div><i class="huge phone icon"></i></button></div>
+                <div class="ui raised segment"><button class="ui fluid icon toggle button" id="radio"><div class="ui bottom attached label">Radio</div><i class="huge rss icon"></i></button></div>
             </div>
             <div class="eight wide column">
-                <div class="ui raised segment"><div class="ui bottom attached label">Television</div><i class="huge tv icon"></i></div>
-                <div class="ui raised segment"><div class="ui bottom attached label">Sirens</div><i class="huge volume up icon"></i></div>
+                <div class="ui raised segment"><button class="ui fluid icon toggle button" id="tv"><div class="ui bottom attached label">Television</div><i class="huge tv icon"></i></button></div>
+                <div class="ui raised segment"><button class="ui fluid icon toggle button" id="sirens"><div class="ui bottom attached label">Sirens</div><i class="huge volume up icon"></i></button></div>
+            </div>
+        </div>
+        <div class="ui centered grid">
+            <div class="sixteen wide column">
+                <button class="ui positive fluid button" id="sendAlert">Send Alerts</button>
             </div>
         </div>
     </div>
+
 </template>
+
