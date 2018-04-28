@@ -39,32 +39,35 @@ Template.Alert_Page.events({
     console.log('send to sirens');
   },
   'mousedown #sendAlert': function (event) {
-    // Meteor.call('CellAlert', 'al', 'ert');
     let sanitizedArray = [];
     sanitizedArray = _.uniq(sendOptions, function (item) {
       return item;
     });
-    _.each(sanitizedArray, function (method) {
-      const id = FlowRouter.getParam('alert');
-      console.log(id);
-      console.log(method);
-      switch (method) {
-        case 'cell':
-          Meteor.call('CellAlert', id, [0]); // the 0 is where numbers would go
-          break;
-        case 'tv':
-          Meteor.call('EmailAlert', id, ['uhmwarning@gmail.com']); // this is where emails would go
-          console.log('it herrr');
-          break;
-        case 'radio':
-          Meteor.call('RadioAlert', id);
-          break;
-        case 'sirens':
-          Meteor.call('SirenAlert', id);
-          break;
-      }
-    });
     const id = FlowRouter.getParam('alert');
-    Alerts.delete({ _id: id });
+    const sendingAlert = Alerts.find({ _id: id }).fetch()[0];
+    if (confirm(`Are you sure you want to send this ${sendingAlert.alertType} alert?`)) {
+      _.each(sanitizedArray, function (method) {
+        const id = FlowRouter.getParam('alert');
+        console.log(id);
+        console.log(method);
+        switch (method) {
+          case 'cell':
+            Meteor.call('CellAlert', id, [0]); // the 0 is where numbers would go
+            break;
+          case 'tv':
+            Meteor.call('EmailAlert', id, ['uhmwarning@gmail.com']); // this is where emails would go
+            console.log('it herrr');
+            break;
+          case 'radio':
+            Meteor.call('RadioAlert', id);
+            break;
+          case 'sirens':
+            Meteor.call('SirenAlert', id);
+            break;
+        }
+      });
+    }
+    Alerts._collection.remove({ _id: id }, 1); // idk why meteor is like this
+    FlowRouter.go('/');
   },
 });
