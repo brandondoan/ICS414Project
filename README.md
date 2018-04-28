@@ -6,4 +6,5 @@ Mock General Alert System application for Hawaii
 1. Open the project directory
 1. Run `meteor npm install`
 1. Run `meteor npm run start`
+1. Run `meteor npm install --save moment`
 1. Go to http://localhost:3000/
